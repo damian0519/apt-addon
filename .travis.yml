@@ -13,7 +13,7 @@ env:
     - IAST_SCAN=true
     - CONTAINER_SECURITY=true
 addons:
-  snap:
+  apt:
     packages:
       - ca-certificates
 
