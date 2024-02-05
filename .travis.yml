@@ -14,8 +14,7 @@ env:
     - CONTAINER_SECURITY=true
 addons:
   snap:
-    packages:
-      - ca-certificates
+    - name: aws-cli
 
 install: skip
 jobs:
