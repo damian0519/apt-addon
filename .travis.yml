@@ -1,10 +1,19 @@
 os: linux
-rvm: 2.6.3
+dist: focal
+language: shell
+env:
+  global:
+    - BAR=bar
+addons:
+  apt:
+    packages:
+      - ca-certificates
+install: skip
 jobs:
   include:
-    - name "condition with regex"
+    - name: "condition with regex"
       script: echo "condition with regex"
-      if: env(RUN_TESTING) =~ /^(?i)(true|1).*/
-    - name "condition without regex"
+      if: env(BAR) =~ /^(?i)(bar|1).*/
+    - name: "condition-without-regex"
       script: echo "condition without regex"
-      if: env(RUN_TESTING) = true
+      if: env(BAR) =~ [ABC]
