@@ -37,8 +37,8 @@ jobs:
     - name: sign
       if: env(SIGN_CONTAINER) =~ /^(?i)(true|1).*/
     - name: preprod
-      if: env(RUN_PREPROD) =~ /^v[true]$/
+      if: env(RUN_PREPROD) =~ /^(?i)(true|0).*/
     - name: iast-scan
-      if: env(IAST_SCAN) =~ ^v[true]$
+      if: env(IAST_SCAN) =~ /^(?i)(true|1).*/
     - name: container-security
       if: env(CONTAINER_SECURITY) =~ /^(0|[true]\d*)
